@@ -1,0 +1,64 @@
+@model TeamworkManagamentProjects.ViewModels.PortfolioPageViewModel
+@{
+    ViewData["Title"] = "Projects & Architectural Portfolio | .NET Solutions";
+    ViewData["MetaDescription"] = "Explore our architectural showcases, sample implementations, and reference case studies built with ASP.NET Core, ASP.NET MVC, Web Forms, and SQL Server.";
+}
+
+<!-- Page Header -->
+<section class="page-header py-5 text-white bg-dark-navy position-relative">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary text-white text-uppercase px-3 py-2 fw-semibold mb-2">Architectural Showcases</span>
+                <h1 class="display-5 fw-bold mb-2">Projects & Reference Implementations</h1>
+                <p class="lead text-light-opacity mb-0 fs-6">
+                    Representative software architectures and reference implementations demonstrating our .NET development capabilities.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a asp-controller="Contact" asp-action="Index" class="btn btn-primary fw-semibold px-4 py-2">
+                    <i class="bi bi-chat-text-fill me-1"></i> Request Case Studies
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Disclaimer Notice -->
+<section class="bg-light py-3 border-bottom">
+    <div class="container">
+        <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 border text-secondary small">
+            <i class="bi bi-info-circle-fill text-primary fs-4 flex-shrink-0"></i>
+            <div>
+                <strong>Portfolio & Confidentiality Notice:</strong> Due to strict client Non-Disclosure Agreements (NDAs), proprietary client code and private company names are withheld. The projects presented below represent architecture reference showcases and functional domain implementations built with the same stack.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects List -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            @foreach (var project in Model.Projects)
+            {
+                <div class="col-lg-6">
+                    <partial name="_ProjectCard" model="project" />
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-light border-top">
+    <div class="container text-center max-w-700 mx-auto">
+        <h3 class="fw-bold text-dark mb-3">Have a Custom Project or Architecture in Mind?</h3>
+        <p class="text-secondary lead fs-6 mb-4">
+            Whether you want to build a new system from the ground up or modernize an existing codebase, our experienced .NET developers are ready to help.
+        </p>
+        <a asp-controller="Contact" asp-action="Index" class="btn btn-primary btn-lg px-4 py-3 fw-bold">
+            <i class="bi bi-chat-dots-fill me-1"></i> Discuss Your Project Scope
+        </a>
+    </div>
+</section>

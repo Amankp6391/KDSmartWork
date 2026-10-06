@@ -1,0 +1,86 @@
+@model TeamworkManagamentProjects.ViewModels.TechnologiesPageViewModel
+@{
+    ViewData["Title"] = "Technologies & Frameworks | C#, ASP.NET Core, MVC, Web Forms, SQL Server";
+    ViewData["MetaDescription"] = "Explore our core .NET technology stack including C#, ASP.NET Core, ASP.NET MVC, Web Forms, SQL Server, Entity Framework Core, REST APIs, and modern frontend tools.";
+}
+
+<!-- Page Header -->
+<section class="page-header py-5 text-white bg-dark-navy position-relative">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary text-white text-uppercase px-3 py-2 fw-semibold mb-2">Our Tech Stack</span>
+                <h1 class="display-5 fw-bold mb-2">Microsoft .NET & Web Technologies</h1>
+                <p class="lead text-light-opacity mb-0 fs-6">
+                    Deep expertise across the complete Microsoft development ecosystem—from the newest .NET versions to dependable legacy frameworks.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a asp-controller="Hire" asp-action="Index" class="btn btn-primary fw-semibold px-4 py-2">
+                    <i class="bi bi-person-check-fill me-1"></i> Hire .NET Engineers
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Showcase -->
+<section class="py-5">
+    <div class="container">
+        @foreach (var category in Model.Categories)
+        {
+            var techsInCategory = Model.Technologies.Where(t => t.Category == category).ToList();
+            <div class="mb-5">
+                <div class="d-flex align-items-center gap-2 mb-4 pb-2 border-bottom">
+                    <span class="badge bg-primary text-white px-3 py-2 text-xs fw-bold text-uppercase">Category</span>
+                    <h3 class="fw-bold text-dark mb-0 fs-4">@category</h3>
+                </div>
+
+                <div class="row g-4">
+                    @foreach (var tech in techsInCategory)
+                    {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white transition-hover">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="tech-icon-circle bg-primary-subtle text-primary fs-3">
+                                            <i class="bi @tech.IconBadgeClass"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-0 text-dark">@tech.Name</h5>
+                                            <span class="text-muted text-xs">@tech.Category</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge bg-light text-primary border fw-semibold">@tech.ProficiencyPercentage% Mastery</span>
+                                </div>
+
+                                <p class="text-secondary small mb-3">
+                                    @tech.Description
+                                </p>
+
+                                <div class="mb-3">
+                                    <h6 class="text-xs fw-bold text-muted text-uppercase mb-2">Best Suited For:</h6>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        @foreach (var useCase in tech.BestSuitedFor)
+                                        {
+                                            <span class="badge bg-light text-secondary border text-xs">@useCase</span>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                    <a asp-controller="Hire" asp-action="Index" asp-route-technology="@tech.Name" class="btn btn-outline-primary btn-sm fw-semibold">
+                                        Hire @tech.Name Dev
+                                    </a>
+                                    <a asp-controller="Contact" asp-action="Index" asp-route-service="@tech.Name" class="small text-muted text-decoration-none hover-primary">
+                                        Discuss Project <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>

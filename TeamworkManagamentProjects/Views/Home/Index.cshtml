@@ -1,0 +1,425 @@
+﻿@model TeamworkManagamentProjects.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Experienced .NET Developers for Your Project | Remote Development Team";
+    ViewData["MetaDescription"] = "Experienced ASP.NET Core, MVC, Web Forms and C# developers available for new projects, existing project maintenance, new module development, full-time and part-time remote work.";
+}
+
+<!-- HERO SECTION -->
+<section class="hero-section text-white position-relative py-5 overflow-hidden">
+    <div class="hero-bg-shapes"></div>
+    <div class="container py-lg-5 position-relative">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white bg-opacity-10 text-white mb-3 border border-white border-opacity-25 text-xs fw-semibold">
+                    <span class="badge bg-primary px-2 py-1">Remote Team</span>
+                    <span>5 Experienced .NET Developers (4–8 Yrs Experience)</span>
+                </div>
+
+                <h1 class="display-4 fw-extrabold tracking-tight mb-3 hero-title">
+                    Experienced .NET Developers for Your Project
+                </h1>
+
+                <p class="lead text-light-opacity mb-3 fs-5">
+                    Build, Maintain and Scale Your Software with Our Experienced Remote Development Team.
+                </p>
+
+                <p class="text-light-subtle mb-4 fs-6">
+                    Experienced ASP.NET Core, MVC, Web Forms and C# Developers Available for Full-Time, Part-Time and Project-Based Work.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 pt-2">
+                    <a asp-controller="Contact" asp-action="Index" class="btn btn-primary btn-lg px-4 py-3 fw-bold shadow-lg d-flex align-items-center gap-2">
+                        <i class="bi bi-chat-dots-fill"></i> Discuss Your Project
+                    </a>
+                    <a asp-controller="Hire" asp-action="Index" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold d-flex align-items-center gap-2">
+                        <i class="bi bi-person-check-fill"></i> Hire a Developer
+                    </a>
+                </div>
+
+                <!-- Trust indicators -->
+                <div class="row g-3 pt-4 mt-2 border-top border-white border-opacity-20 text-light-subtle text-xs">
+                    <div class="col-auto d-flex align-items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-accent"></i>
+                        <span>No Long-Term Lock-in</span>
+                    </div>
+                    <div class="col-auto d-flex align-items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-accent"></i>
+                        <span>Direct Developer Communication</span>
+                    </div>
+                    <div class="col-auto d-flex align-items-center gap-2">
+                        <i class="bi bi-check-circle-fill text-accent"></i>
+                        <span>Clean Code & Architecture</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Code / Visual Preview Card -->
+            <div class="col-lg-5">
+                <div class="card hero-glass-card shadow-2xl border-0 rounded-4 text-white p-4">
+                    <div class="d-flex align-items-center justify-content-between pb-3 border-bottom border-secondary border-opacity-25 mb-3">
+                        <div class="d-flex gap-2">
+                            <span class="rounded-circle bg-danger d-inline-block" style="width: 12px; height: 12px;"></span>
+                            <span class="rounded-circle bg-warning d-inline-block" style="width: 12px; height: 12px;"></span>
+                            <span class="rounded-circle bg-success d-inline-block" style="width: 12px; height: 12px;"></span>
+                        </div>
+                        <span class="text-xs font-monospace text-light-subtle">DevTeam.Capabilities.cs</span>
+                    </div>
+
+                    <div class="code-snippet font-monospace text-xs line-height-relaxed text-light-subtle">
+                        <p class="mb-1"><span class="text-info">public class</span> <span class="text-warning">RemoteDevTeam</span></p>
+                        <p class="mb-1">{</p>
+                        <p class="mb-1 ms-3"><span class="text-info">public int</span> TeamSize => <span class="text-success">5</span>;</p>
+                        <p class="mb-1 ms-3"><span class="text-info">public string</span> Experience => <span class="text-warning">"4–8 Years"</span>;</p>
+                        <p class="mb-1 ms-3"><span class="text-info">public string[]</span> TechStack => <span class="text-info">new</span>[] {</p>
+                        <p class="mb-1 ms-5"><span class="text-warning">"ASP.NET Core"</span>, <span class="text-warning">"ASP.NET MVC"</span>,</p>
+                        <p class="mb-1 ms-5"><span class="text-warning">"ASP.NET Web Forms"</span>, <span class="text-warning">"SQL Server"</span>,</p>
+                        <p class="mb-1 ms-5"><span class="text-warning">"REST APIs"</span>, <span class="text-warning">"EF Core"</span></p>
+                        <p class="mb-1 ms-3">};</p>
+                        <p class="mb-1 ms-3"><span class="text-info">public string[]</span> EngagementModels => <span class="text-info">new</span>[] {</p>
+                        <p class="mb-1 ms-5"><span class="text-warning">"Full-Time"</span>, <span class="text-warning">"Part-Time"</span>, <span class="text-warning">"Maintenance"</span></p>
+                        <p class="mb-1 ms-3">};</p>
+                        <p class="mb-0">}</p>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                        <span class="text-xs text-light-subtle"><i class="bi bi-circle-fill text-success me-1"></i> Available Now</span>
+                        <a asp-controller="Hire" asp-action="Index" class="btn btn-sm btn-accent fw-bold text-dark px-3">
+                            Hire Today
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATISTICS SECTION -->
+<section class="stats-section bg-light py-4 border-bottom shadow-sm">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-6 col-md-4 col-lg">
+                <div class="stat-box p-3 bg-white rounded-3 shadow-xs h-100 border">
+                    <div class="stat-number text-primary fw-extrabold display-6 mb-1">5+</div>
+                    <div class="stat-label text-dark fw-bold">Developers</div>
+                    <div class="text-muted text-xs">Dedicated Remote Team</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="stat-box p-3 bg-white rounded-3 shadow-xs h-100 border">
+                    <div class="stat-number text-primary fw-extrabold display-6 mb-1">4–8</div>
+                    <div class="stat-label text-dark fw-bold">Years Experience</div>
+                    <div class="text-muted text-xs">Mid to Senior Level</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="stat-box p-3 bg-white rounded-3 shadow-xs h-100 border">
+                    <div class="stat-number text-primary fw-extrabold display-6 mb-1">100%</div>
+                    <div class="stat-label text-dark fw-bold">Full & Part-Time</div>
+                    <div class="text-muted text-xs">Flexible Engagements</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="stat-box p-3 bg-white rounded-3 shadow-xs h-100 border">
+                    <div class="stat-number text-primary fw-extrabold display-6 mb-1">Remote</div>
+                    <div class="stat-label text-dark fw-bold">Development</div>
+                    <div class="text-muted text-xs">Work From Home / Global</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg">
+                <div class="stat-box p-3 bg-white rounded-3 shadow-xs h-100 border">
+                    <div class="stat-number text-primary fw-extrabold display-6 mb-1">End-to-End</div>
+                    <div class="stat-label text-dark fw-bold">New & Maintenance</div>
+                    <div class="text-muted text-xs">Greenfield & Legacy Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services-section py-5 my-3">
+    <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-primary-subtle text-primary text-uppercase px-3 py-2 fw-bold tracking-wide">Our Expertise</span>
+            <h2 class="display-6 fw-bold mt-2 text-dark">Comprehensive .NET Development Services</h2>
+            <p class="text-secondary lead fs-6">
+                Whether you need a brand-new application, ongoing maintenance for a mission-critical system, or new business modules, our team has you covered.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            @foreach (var service in Model.Services)
+            {
+                <div class="col-lg-3 col-md-6">
+                    <partial name="_ServiceCard" model="service" />
+                </div>
+            }
+        </div>
+
+        <div class="text-center mt-5">
+            <a asp-controller="Services" asp-action="Index" class="btn btn-outline-primary btn-lg px-4 fw-semibold">
+                Explore All 12+ Development Services <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="why-us-section py-5 bg-light border-top border-bottom">
+    <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-success-subtle text-success text-uppercase px-3 py-2 fw-bold tracking-wide">Why Work With Us</span>
+            <h2 class="display-6 fw-bold mt-2 text-dark">Why Choose Our Remote .NET Team</h2>
+            <p class="text-secondary lead fs-6">
+                We combine deep technical competence in .NET with transparent communication and flexible hiring models.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="feature-icon bg-primary-subtle text-primary rounded-3 p-3 fs-4">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Experienced Developers</h5>
+                            <span class="text-muted small">4–8 Years Professional Experience</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">
+                        Every developer in our 5-member team has substantial hands-on industry experience building enterprise web systems, SQL schemas, and APIs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="feature-icon bg-success-subtle text-success rounded-3 p-3 fs-4">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">5-Member Dedicated Team</h5>
+                            <span class="text-muted small">Cohesive & Collaborative</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">
+                        Get a ready-to-deploy, tightly coordinated team with shared code standards, peer reviews, and complementary specializations across frontend, backend, and DB.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="feature-icon bg-info-subtle text-info rounded-3 p-3 fs-4">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Flexible Engagement</h5>
+                            <span class="text-muted small">Full-Time & Part-Time</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">
+                        Hire developers for full-time 40-hour weeks, part-time 20-hour support, or project-based milestone sprints according to your exact budget and timeline.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="feature-icon bg-warning-subtle text-warning rounded-3 p-3 fs-4">
+                            <i class="bi bi-house-door-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Remote / Work From Home</h5>
+                            <span class="text-muted small">Cost-Effective & Global</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">
+                        No overhead, equipment, or recruitment fees. Our developers are fully equipped for remote work with high-speed setups and modern tools.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="feature-icon bg-primary-subtle text-primary rounded-3 p-3 fs-4">
+                            <i class="bi bi-wrench-adjustable-circle"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Existing Project Support</h5>
+                            <span class="text-muted small">Legacy & Web Forms Specialists</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">
+                        Unlike agencies that refuse legacy systems, we actively support, debug, and stabilize mature ASP.NET Web Forms and older MVC applications.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="feature-icon bg-dark-subtle text-dark rounded-3 p-3 fs-4">
+                            <i class="bi bi-chat-quote-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Fast Communication</h5>
+                            <span class="text-muted small">Transparent & Direct</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">
+                        Direct communication via Teams, Slack, Email, and WhatsApp. Daily updates, clear git commit logs, and predictable delivery milestones.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DEVELOPMENT PROCESS SECTION -->
+<section class="process-section py-5 my-3">
+    <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-primary-subtle text-primary text-uppercase px-3 py-2 fw-bold tracking-wide">Structured Workflow</span>
+            <h2 class="display-6 fw-bold mt-2 text-dark">Our Development Process</h2>
+            <p class="text-secondary lead fs-6">
+                A disciplined engineering methodology ensuring predictability, code quality, and on-time delivery.
+            </p>
+        </div>
+
+        <div class="row g-3 g-lg-4 position-relative">
+            <div class="col-6 col-md-4 col-lg">
+                <div class="process-step-card text-center p-3 h-100 rounded-3 bg-white border shadow-xs">
+                    <div class="step-badge mx-auto mb-2">1</div>
+                    <h6 class="fw-bold mb-1">Requirement Discussion</h6>
+                    <p class="text-muted text-xs mb-0">Understand goals, specs & pain points</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="process-step-card text-center p-3 h-100 rounded-3 bg-white border shadow-xs">
+                    <div class="step-badge mx-auto mb-2">2</div>
+                    <h6 class="fw-bold mb-1">Technical Analysis</h6>
+                    <p class="text-muted text-xs mb-0">Architecture review & feasibility study</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="process-step-card text-center p-3 h-100 rounded-3 bg-white border shadow-xs">
+                    <div class="step-badge mx-auto mb-2">3</div>
+                    <h6 class="fw-bold mb-1">Project Estimation</h6>
+                    <p class="text-muted text-xs mb-0">Transparent timeline & resource scoping</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="process-step-card text-center p-3 h-100 rounded-3 bg-white border shadow-xs">
+                    <div class="step-badge mx-auto mb-2">4</div>
+                    <h6 class="fw-bold mb-1">Development</h6>
+                    <p class="text-muted text-xs mb-0">Clean C# code, SOLID & daily commits</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="process-step-card text-center p-3 h-100 rounded-3 bg-white border shadow-xs">
+                    <div class="step-badge mx-auto mb-2">5</div>
+                    <h6 class="fw-bold mb-1">Testing</h6>
+                    <p class="text-muted text-xs mb-0">Unit tests, QA & regression checks</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg">
+                <div class="process-step-card text-center p-3 h-100 rounded-3 bg-white border shadow-xs">
+                    <div class="step-badge mx-auto mb-2">6</div>
+                    <h6 class="fw-bold mb-1">Deployment</h6>
+                    <p class="text-muted text-xs mb-0">CI/CD, IIS & cloud environment setup</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg">
+                <div class="process-step-card text-center p-3 h-100 rounded-3 bg-white border shadow-xs">
+                    <div class="step-badge mx-auto mb-2">7</div>
+                    <h6 class="fw-bold mb-1">Maintenance & Support</h6>
+                    <p class="text-muted text-xs mb-0">Ongoing monitoring, patches & upgrades</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TECHNOLOGY SECTION -->
+<section class="tech-section py-5 bg-light border-top border-bottom">
+    <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-info-subtle text-dark text-uppercase px-3 py-2 fw-bold tracking-wide">Technology Stack</span>
+            <h2 class="display-6 fw-bold mt-2 text-dark">Proven .NET & Web Technologies</h2>
+            <p class="text-secondary lead fs-6">
+                Our developers master the complete Microsoft .NET development ecosystem from modern .NET Core to robust database solutions.
+            </p>
+        </div>
+
+        <div class="row g-3 justify-content-center">
+            @foreach (var tech in Model.Technologies)
+            {
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="card h-100 border-0 p-3 text-center rounded-3 shadow-xs bg-white tech-badge-card transition-hover">
+                        <div class="tech-icon-circle mx-auto mb-2 bg-light text-primary fs-3">
+                            <i class="bi @tech.IconBadgeClass"></i>
+                        </div>
+                        <h6 class="fw-bold mb-1 text-dark fs-6">@tech.Name</h6>
+                        <span class="text-muted text-xs">@tech.Category</span>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center mt-4">
+            <a asp-controller="Technologies" asp-action="Index" class="btn btn-outline-secondary fw-semibold">
+                View Full Technology Breakdown <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- HIRE DEVELOPER CTA SECTION -->
+<section class="hire-cta-section py-5 bg-gradient-dark text-white position-relative">
+    <div class="container py-lg-4 text-center max-w-800 mx-auto">
+        <span class="badge bg-warning text-dark text-uppercase px-3 py-2 fw-bold mb-3">Remote Developer Hiring</span>
+        <h2 class="display-5 fw-bold mb-3">Need an Experienced .NET Developer?</h2>
+        <p class="lead text-light-opacity mb-4 fs-5">
+            Whether you need a developer for a few hours a day, part-time support, or a dedicated full-time developer, our experienced remote team can help.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a asp-controller="Hire" asp-action="Index" asp-route-engagement="Full-Time" class="btn btn-primary btn-lg px-4 py-3 fw-bold shadow">
+                <i class="bi bi-briefcase-fill me-1"></i> Hire Full-Time Developer
+            </a>
+            <a asp-controller="Hire" asp-action="Index" asp-route-engagement="Part-Time" class="btn btn-info btn-lg px-4 py-3 fw-bold text-dark shadow">
+                <i class="bi bi-clock-fill me-1"></i> Hire Part-Time Developer
+            </a>
+            <a asp-controller="Contact" asp-action="Index" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold">
+                <i class="bi bi-chat-text-fill me-1"></i> Discuss Your Requirement
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT CTA SECTION -->
+<section class="contact-cta-section py-5 bg-white">
+    <div class="container">
+        <div class="card border-0 shadow-lg rounded-4 p-4 p-lg-5 bg-primary text-white">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <h3 class="display-6 fw-bold mb-2">Have a Project or Need Development Support?</h3>
+                    <p class="lead mb-0 text-white-opacity fs-6">
+                        Tell us about your requirement and our team will get back to you with a technical breakdown and developer availability within 24 hours.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a asp-controller="Contact" asp-action="Index" class="btn btn-light btn-lg px-4 py-3 fw-bold text-primary shadow-sm">
+                        <i class="bi bi-envelope-check-fill me-1"></i> Contact Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

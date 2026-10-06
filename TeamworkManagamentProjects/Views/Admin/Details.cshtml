@@ -1,0 +1,162 @@
+@model TeamworkManagamentProjects.ViewModels.Admin.AdminEnquiryDetailsViewModel
+@{
+    ViewData["Title"] = $"Enquiry #{Model.Enquiry.Id} Details | Admin Portal";
+    Layout = "_Layout";
+}
+
+<section class="bg-dark-navy text-white py-4">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div>
+                <a asp-controller="Admin" asp-action="Index" class="text-white-50 text-decoration-none text-xs d-block mb-1">
+                    <i class="bi bi-arrow-left me-1"></i> Back to Dashboard
+                </a>
+                <h2 class="fw-bold mb-0">Enquiry #@Model.Enquiry.Id: @Model.Enquiry.Name</h2>
+            </div>
+            <div>
+                <span class="badge bg-primary px-3 py-2 fs-6">Status: @Model.Enquiry.Status</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Left Info Column -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white mb-4">
+                    <h5 class="fw-bold text-dark border-bottom pb-3 mb-4"><i class="bi bi-file-earmark-text text-primary me-2"></i> Project Requirement Details</h5>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block">Client Name</span>
+                            <span class="fs-6 fw-semibold text-dark">@Model.Enquiry.Name</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block">Company Name</span>
+                            <span class="fs-6 fw-semibold text-dark">@(string.IsNullOrEmpty(Model.Enquiry.CompanyName) ? "N/A" : Model.Enquiry.CompanyName)</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block">Email Address</span>
+                            <a href="mailto:@Model.Enquiry.Email" class="fs-6 text-primary fw-semibold">@Model.Enquiry.Email</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block">Phone / WhatsApp</span>
+                            <a href="tel:@Model.Enquiry.Phone" class="fs-6 text-dark fw-semibold">@Model.Enquiry.Phone</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4 pt-3 border-top">
+                        <div class="col-sm-6">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block">Service Required</span>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6">@Model.Enquiry.ServiceRequired</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block">Engagement Model</span>
+                            <span class="badge bg-secondary-subtle text-secondary border fs-6">@Model.Enquiry.EngagementType</span>
+                        </div>
+                        @if (!string.IsNullOrEmpty(Model.Enquiry.Technology))
+                        {
+                            <div class="col-sm-6">
+                                <span class="text-xs text-muted fw-bold text-uppercase d-block">Target Technology</span>
+                                <span class="badge bg-light text-dark border fs-6">@Model.Enquiry.Technology</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.Enquiry.ExperienceRequired))
+                        {
+                            <div class="col-sm-6">
+                                <span class="text-xs text-muted fw-bold text-uppercase d-block">Experience Required</span>
+                                <span class="badge bg-light text-dark border fs-6">@Model.Enquiry.ExperienceRequired</span>
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.Enquiry.ExpectedStartDate))
+                        {
+                            <div class="col-sm-6">
+                                <span class="text-xs text-muted fw-bold text-uppercase d-block">Expected Start Date</span>
+                                <span class="text-dark fw-medium">@Model.Enquiry.ExpectedStartDate</span>
+                            </div>
+                        }
+                        <div class="col-sm-6">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block">Preferred Contact Method</span>
+                            <span class="text-dark fw-medium">@Model.Enquiry.PreferredContactMethod</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-top mb-4">
+                        <span class="text-xs text-muted fw-bold text-uppercase d-block mb-2">Project Description / Requirement Scope</span>
+                        <div class="p-3 bg-light rounded-3 text-secondary line-height-relaxed border">
+                            @Model.Enquiry.ProjectDescription
+                        </div>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.Enquiry.AdditionalRequirements))
+                    {
+                        <div class="pt-3 border-top">
+                            <span class="text-xs text-muted fw-bold text-uppercase d-block mb-2">Additional Tools / Notes</span>
+                            <div class="p-3 bg-light rounded-3 text-secondary line-height-relaxed border">
+                                @Model.Enquiry.AdditionalRequirements
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Right Action Column: Status & Notes -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                    <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="bi bi-gear-fill text-primary me-2"></i> Update Enquiry Status</h5>
+
+                    <form asp-controller="Admin" asp-action="UpdateStatus" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="Id" value="@Model.Enquiry.Id" />
+
+                        <div class="mb-3">
+                            <label class="form-label text-xs fw-bold text-muted text-uppercase">Status</label>
+                            <select name="Status" class="form-select">
+                                <option value="New" selected="@(Model.Enquiry.Status == EnquiryStatus.New)">New</option>
+                                <option value="Contacted" selected="@(Model.Enquiry.Status == EnquiryStatus.Contacted)">Contacted</option>
+                                <option value="InDiscussion" selected="@(Model.Enquiry.Status == EnquiryStatus.InDiscussion)">In Discussion</option>
+                                <option value="Converted" selected="@(Model.Enquiry.Status == EnquiryStatus.Converted)">Converted</option>
+                                <option value="Closed" selected="@(Model.Enquiry.Status == EnquiryStatus.Closed)">Closed</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-xs fw-bold text-muted text-uppercase">Internal Admin Notes</label>
+                            <textarea name="AdminNotes" rows="4" class="form-control" placeholder="Add follow-up notes, discussion outcomes, rate discussions...">@Model.Enquiry.AdminNotes</textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2 mb-3">
+                            <i class="bi bi-check2-circle me-1"></i> Save Changes
+                        </button>
+                    </form>
+
+                    <hr />
+
+                    <!-- Delete button -->
+                    <form asp-controller="Admin" asp-action="Delete" asp-route-id="@Model.Enquiry.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this enquiry? This action cannot be undone.');">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-outline-danger btn-sm w-100 fw-semibold">
+                            <i class="bi bi-trash3 me-1"></i> Delete Enquiry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Meta Box -->
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-light border">
+                    <h6 class="fw-bold text-dark text-xs text-uppercase mb-3">Record Timestamps</h6>
+                    <div class="text-xs text-muted mb-2">
+                        <strong>Received:</strong> @Model.Enquiry.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss UTC")
+                    </div>
+                    @if (Model.Enquiry.UpdatedDate.HasValue)
+                    {
+                        <div class="text-xs text-muted">
+                            <strong>Last Updated:</strong> @Model.Enquiry.UpdatedDate.Value.ToString("yyyy-MM-dd HH:mm:ss UTC")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+@model TeamworkManagamentProjects.Models.ServiceOffering
+
+<div class="card h-100 service-card border-0 shadow-sm rounded-4 transition-hover">
+    <div class="card-body p-4 d-flex flex-column">
+        <div class="service-icon-box mb-3 rounded-3 d-flex align-items-center justify-content-center text-primary bg-primary-subtle">
+            <i class="bi @Model.IconClass fs-3"></i>
+        </div>
+        
+        <h5 class="card-title fw-bold text-dark mb-2">@Model.Title</h5>
+        <p class="card-text text-secondary small mb-3">@Model.ShortDescription</p>
+
+        @if (Model.Benefits.Any())
+        {
+            <div class="mb-3">
+                <ul class="list-unstyled small text-secondary mb-0">
+                    @foreach (var benefit in Model.Benefits.Take(3))
+                    {
+                        <li class="d-flex align-items-start gap-2 mb-1">
+                            <i class="bi bi-check2 text-primary mt-1"></i>
+                            <span>@benefit</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+
+        <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+            <div class="d-flex flex-wrap gap-1">
+                @foreach (var tech in Model.TechnologiesUsed.Take(3))
+                {
+                    <span class="badge bg-light text-muted border text-xs">@tech</span>
+                }
+            </div>
+            <a asp-controller="Contact" asp-action="Index" asp-route-service="@Model.Title" class="btn btn-sm btn-outline-primary fw-semibold">
+                Discuss <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</div>

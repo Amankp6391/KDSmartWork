@@ -1,0 +1,266 @@
+@model TeamworkManagamentProjects.ViewModels.HireDeveloperViewModel
+@{
+    ViewData["Title"] = "Hire .NET Developers | Full-Time, Part-Time & Dedicated Team";
+    ViewData["MetaDescription"] = "Hire experienced ASP.NET Core, MVC, Web Forms, and SQL Server developers on a full-time, part-time, or dedicated team basis with 4–8 years of experience.";
+}
+
+<!-- Page Header -->
+<section class="page-header py-5 text-white bg-dark-navy position-relative">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-warning text-dark text-uppercase px-3 py-2 fw-semibold mb-2">Flexible Hiring Models</span>
+                <h1 class="display-5 fw-bold mb-2">Hire Experienced .NET Developers</h1>
+                <p class="lead text-light-opacity mb-0 fs-6">
+                    Select your preferred engagement model, required technology, and experience level. Our 5-member remote team is ready to deliver.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a href="#hire-form" class="btn btn-primary fw-bold px-4 py-2">
+                    <i class="bi bi-arrow-down-circle me-1"></i> Jump to Requirement Form
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Engagement Models Cards -->
+<section class="py-5 bg-light border-bottom">
+    <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-primary-subtle text-primary text-uppercase px-3 py-2 fw-bold tracking-wide">Engagement Options</span>
+            <h2 class="display-6 fw-bold mt-2 text-dark">Flexible Hiring for Any Team Size</h2>
+            <p class="text-secondary lead fs-6">Choose the collaboration model that matches your workload and budget.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white text-center">
+                    <div class="model-icon-circle mx-auto mb-3 bg-primary-subtle text-primary fs-3">
+                        <i class="bi bi-person-fill-check"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1">Full-Time Developer</h5>
+                    <span class="badge bg-primary-subtle text-primary mb-3">160 Hours / Month</span>
+                    <p class="text-secondary small mb-3">
+                        Dedicated 40 hours/week developer assigned entirely to your projects, attending your daily standups and sprint planning.
+                    </p>
+                    <ul class="list-unstyled small text-muted text-start mb-4">
+                        <li><i class="bi bi-check2 text-success me-1"></i> Direct daily communication</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> Dedicated GitHub/GitLab commits</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> Timezone aligned overlap</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white text-center">
+                    <div class="model-icon-circle mx-auto mb-3 bg-info-subtle text-info fs-3">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1">Part-Time Support</h5>
+                    <span class="badge bg-info-subtle text-dark mb-3">80 Hours / Month</span>
+                    <p class="text-secondary small mb-3">
+                        Ideal for ongoing application maintenance, regular bug fixes, feature additions, and continuous support without full-time commitment.
+                    </p>
+                    <ul class="list-unstyled small text-muted text-start mb-4">
+                        <li><i class="bi bi-check2 text-success me-1"></i> 20 hours / week flexibility</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> Issue tracker integration</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> Cost-effective scaling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white text-center">
+                    <div class="model-icon-circle mx-auto mb-3 bg-success-subtle text-success fs-3">
+                        <i class="bi bi-diagram-3-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1">Project-Based</h5>
+                    <span class="badge bg-success-subtle text-success mb-3">Fixed Scope / Sprints</span>
+                    <p class="text-secondary small mb-3">
+                        End-to-end delivery of defined modules, new applications, or complete system migrations with clear milestone deliverables.
+                    </p>
+                    <ul class="list-unstyled small text-muted text-start mb-4">
+                        <li><i class="bi bi-check2 text-success me-1"></i> Defined deliverables & scope</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> Milestone demo reviews</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> Post-launch warranty support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white text-center">
+                    <div class="model-icon-circle mx-auto mb-3 bg-warning-subtle text-warning fs-3">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1">Dedicated Team</h5>
+                    <span class="badge bg-warning-subtle text-dark mb-3">Full 5-Member Unit</span>
+                    <p class="text-secondary small mb-3">
+                        Deploy our complete 5-member team (Architect, Core devs, Web Forms specialist, and SQL/API developer) for heavy product development.
+                    </p>
+                    <ul class="list-unstyled small text-muted text-start mb-4">
+                        <li><i class="bi bi-check2 text-success me-1"></i> Complete skill set coverage</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> Internal peer reviews & QA</li>
+                        <li><i class="bi bi-check2 text-success me-1"></i> High engineering velocity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Requirement Form Section -->
+<section id="hire-form" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                    <div class="bg-primary text-white p-4 p-md-5">
+                        <span class="badge bg-light text-primary text-uppercase px-3 py-1 fw-bold mb-2">Hiring Requirement Form</span>
+                        <h3 class="fw-bold mb-2">Tell Us About Your Requirement</h3>
+                        <p class="text-white-opacity mb-0 fs-6">
+                            Fill out the details below. We will review your technical requirements and respond with developer availability and transparent rates within 24 hours.
+                        </p>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5 bg-white">
+                        <form asp-controller="Hire" asp-action="Index" method="post" id="hireDeveloperForm" novalidate>
+                            @Html.AntiForgeryToken()
+
+                            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                            <div class="row g-4 mb-4">
+                                <!-- Name -->
+                                <div class="col-md-6">
+                                    <label asp-for="Name" class="form-label fw-semibold text-dark">Your Full Name <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
+                                        <input asp-for="Name" class="form-control" placeholder="e.g. John Doe" />
+                                    </div>
+                                    <span asp-validation-for="Name" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Company -->
+                                <div class="col-md-6">
+                                    <label asp-for="CompanyName" class="form-label fw-semibold text-dark">Company / Organization Name <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-building"></i></span>
+                                        <input asp-for="CompanyName" class="form-control" placeholder="e.g. Acme Software Inc." />
+                                    </div>
+                                    <span asp-validation-for="CompanyName" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-md-6">
+                                    <label asp-for="Email" class="form-label fw-semibold text-dark">Work Email Address <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+                                        <input asp-for="Email" type="email" class="form-control" placeholder="name@company.com" />
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-md-6">
+                                    <label asp-for="Phone" class="form-label fw-semibold text-dark">Phone / WhatsApp Number <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-telephone"></i></span>
+                                        <input asp-for="Phone" class="form-control" placeholder="+1 (555) 000-0000" />
+                                    </div>
+                                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Engagement Type Dropdown -->
+                                <div class="col-md-4">
+                                    <label asp-for="EngagementType" class="form-label fw-semibold text-dark">Developer Engagement <span class="text-danger">*</span></label>
+                                    <select asp-for="EngagementType" class="form-select">
+                                        <option value="Full-Time">Full-Time (40 hrs/week)</option>
+                                        <option value="Part-Time">Part-Time (20 hrs/week)</option>
+                                        <option value="Project-Based">Project-Based</option>
+                                        <option value="Dedicated Team">Dedicated 5-Member Team</option>
+                                    </select>
+                                    <span asp-validation-for="EngagementType" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Technology Dropdown -->
+                                <div class="col-md-4">
+                                    <label asp-for="Technology" class="form-label fw-semibold text-dark">Primary Technology <span class="text-danger">*</span></label>
+                                    <select asp-for="Technology" class="form-select">
+                                        <option value="ASP.NET Core">ASP.NET Core</option>
+                                        <option value="ASP.NET MVC">ASP.NET MVC</option>
+                                        <option value="ASP.NET Web Forms">ASP.NET Web Forms</option>
+                                        <option value="Angular">Angular (.NET API Backend)</option>
+                                        <option value="React">React (.NET API Backend)</option>
+                                        <option value="C#">C# / Backend</option>
+                                        <option value="SQL Server">SQL Server / Database</option>
+                                        <option value="API Development">API Development & Integration</option>
+                                    </select>
+                                    <span asp-validation-for="Technology" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Experience Required Dropdown -->
+                                <div class="col-md-4">
+                                    <label asp-for="ExperienceRequired" class="form-label fw-semibold text-dark">Experience Required <span class="text-danger">*</span></label>
+                                    <select asp-for="ExperienceRequired" class="form-select">
+                                        <option value="4–5 Years">4–5 Years (Mid-Level)</option>
+                                        <option value="5–6 Years">5–6 Years (Senior)</option>
+                                        <option value="6–8 Years">6–8 Years (Lead / Architect)</option>
+                                    </select>
+                                    <span asp-validation-for="ExperienceRequired" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Expected Start Date -->
+                                <div class="col-md-6">
+                                    <label asp-for="ExpectedStartDate" class="form-label fw-semibold text-dark">Expected Start Date</label>
+                                    <select asp-for="ExpectedStartDate" class="form-select">
+                                        <option value="Immediately">Immediately (Within a few days)</option>
+                                        <option value="Within 2 Weeks">Within 2 Weeks</option>
+                                        <option value="Next Month">Next Month</option>
+                                        <option value="Planning Stage">Planning Stage / Exploratory</option>
+                                    </select>
+                                </div>
+
+                                <!-- Preferred Contact Method -->
+                                <div class="col-md-6">
+                                    <label asp-for="PreferredContactMethod" class="form-label fw-semibold text-dark">Preferred Contact Method</label>
+                                    <select asp-for="PreferredContactMethod" class="form-select">
+                                        <option value="Email">Email</option>
+                                        <option value="Phone">Phone</option>
+                                        <option value="WhatsApp">WhatsApp</option>
+                                        <option value="VideoCall">Video Call (Google Meet / Zoom / Teams)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Project Description -->
+                                <div class="col-12">
+                                    <label asp-for="ProjectDescription" class="form-label fw-semibold text-dark">Project Description & Scope of Work <span class="text-danger">*</span></label>
+                                    <textarea asp-for="ProjectDescription" rows="4" class="form-control" placeholder="Briefly describe your project, existing stack, goals, key modules, or challenges you need help with..."></textarea>
+                                    <span asp-validation-for="ProjectDescription" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Additional Requirements -->
+                                <div class="col-12">
+                                    <label asp-for="AdditionalRequirements" class="form-label fw-semibold text-dark">Additional Requirements or Tools (Optional)</label>
+                                    <input asp-for="AdditionalRequirements" class="form-control" placeholder="e.g. Entity Framework Core, Docker, Azure DevOps, Jira, specific third-party APIs..." />
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-wrap align-items-center justify-content-between pt-3 border-top">
+                                <span class="text-xs text-muted mb-2 mb-md-0">
+                                    <i class="bi bi-lock-fill text-success me-1"></i> Your details are strictly confidential. We are ready to sign an NDA.
+                                </span>
+                                <button type="submit" class="btn btn-primary btn-lg px-4 py-3 fw-bold shadow-sm">
+                                    <i class="bi bi-send-check-fill me-1"></i> Submit Requirement
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,135 @@
+@model TeamworkManagamentProjects.ViewModels.ServicesPageViewModel
+@{
+    ViewData["Title"] = "Software Development Services | ASP.NET Core, MVC & Web Forms";
+    ViewData["MetaDescription"] = "Explore our full suite of .NET development services: ASP.NET Core, ASP.NET MVC, Web Forms maintenance, bug fixing, API development, and SQL Server optimization.";
+}
+
+<!-- Page Header -->
+<section class="page-header py-5 text-white bg-dark-navy position-relative">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary text-white text-uppercase px-3 py-2 fw-semibold mb-2">Our Capabilities</span>
+                <h1 class="display-5 fw-bold mb-2">End-to-End .NET Development Services</h1>
+                <p class="lead text-light-opacity mb-0 fs-6">
+                    From greenfield ASP.NET Core applications to legacy Web Forms maintenance, API integration, and database tuning.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a asp-controller="Contact" asp-action="Index" class="btn btn-primary fw-semibold px-4 py-2">
+                    <i class="bi bi-chat-dots-fill me-1"></i> Request a Proposal
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Anchor Nav -->
+<section class="bg-light py-3 border-bottom sticky-top-services shadow-xs">
+    <div class="container">
+        <div class="d-flex align-items-center gap-2 overflow-auto py-1">
+            <span class="text-xs fw-bold text-muted text-uppercase me-2 text-nowrap">Jump To:</span>
+            @foreach (var svc in Model.Services)
+            {
+                <a href="#@svc.Slug" class="btn btn-sm btn-white border text-secondary text-nowrap rounded-pill px-3 py-1 text-xs fw-semibold hover-primary">
+                    @svc.Title
+                </a>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Services List -->
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex flex-column gap-5">
+            @for (int i = 0; i < Model.Services.Count; i++)
+            {
+                var service = Model.Services[i];
+                var isEven = i % 2 == 0;
+                var isHighlighted = !string.IsNullOrEmpty(Model.HighlightedSlug) && Model.HighlightedSlug.Equals(service.Slug, StringComparison.OrdinalIgnoreCase);
+
+                <div id="@service.Slug" class="service-detail-block p-4 p-lg-5 rounded-4 border @(isHighlighted ? "border-primary shadow-lg bg-primary-subtle bg-opacity-25" : "bg-white shadow-sm")">
+                    <div class="row align-items-center g-4 @(isEven ? "" : "flex-lg-row-reverse")">
+                        <!-- Text & Benefits -->
+                        <div class="col-lg-7">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="service-icon-box rounded-3 d-flex align-items-center justify-content-center text-primary bg-primary-subtle fs-3">
+                                    <i class="bi @service.IconClass"></i>
+                                </div>
+                                <div>
+                                    <span class="badge bg-light text-primary border text-xs fw-semibold mb-1">Service #@(i + 1)</span>
+                                    <h3 class="fw-bold text-dark mb-0">@service.Title</h3>
+                                </div>
+                            </div>
+
+                            <p class="text-secondary lead fs-6 mb-4">
+                                @service.DetailedDescription
+                            </p>
+
+                            <h6 class="fw-bold text-dark text-uppercase text-xs tracking-wider mb-2">Key Service Benefits:</h6>
+                            <div class="row g-2 mb-4">
+                                @foreach (var benefit in service.Benefits)
+                                {
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-start gap-2">
+                                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                                            <span class="small text-secondary">@benefit</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="d-flex flex-wrap align-items-center gap-3 pt-3 border-top">
+                                <a asp-controller="Contact" asp-action="Index" asp-route-service="@service.Title" class="btn btn-primary fw-semibold px-4 py-2">
+                                    <i class="bi bi-chat-text-fill me-1"></i> Discuss This Service
+                                </a>
+                                <a asp-controller="Hire" asp-action="Index" asp-route-technology="@service.TechnologiesUsed.FirstOrDefault()" class="btn btn-outline-secondary fw-semibold px-3 py-2">
+                                    <i class="bi bi-person-check me-1"></i> Hire Specialist
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Technologies & Meta Box -->
+                        <div class="col-lg-5">
+                            <div class="p-4 rounded-4 bg-light border h-100">
+                                <h6 class="fw-bold text-dark mb-3"><i class="bi bi-tools text-primary me-2"></i> Technologies & Frameworks</h6>
+                                <div class="d-flex flex-wrap gap-2 mb-4">
+                                    @foreach (var tech in service.TechnologiesUsed)
+                                    {
+                                        <span class="badge bg-white text-dark border px-3 py-2 fs-7 fw-semibold shadow-xs">
+                                            <i class="bi bi-cpu text-primary me-1"></i> @tech
+                                        </span>
+                                    }
+                                </div>
+
+                                <div class="engagement-badge-box p-3 bg-white rounded-3 border">
+                                    <h6 class="text-xs fw-bold text-muted text-uppercase mb-2">Available Delivery Models</h6>
+                                    <ul class="list-unstyled mb-0 text-xs text-secondary d-flex flex-column gap-1">
+                                        <li><i class="bi bi-dot text-primary fs-5 align-middle"></i> Full-Time Dedicated Developer (40h/week)</li>
+                                        <li><i class="bi bi-dot text-primary fs-5 align-middle"></i> Part-Time Developer (10–20h/week)</li>
+                                        <li><i class="bi bi-dot text-primary fs-5 align-middle"></i> Fixed-Price Milestone Project</li>
+                                        <li><i class="bi bi-dot text-primary fs-5 align-middle"></i> Monthly Retainer / Maintenance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="py-5 bg-gradient-dark text-white text-center">
+    <div class="container py-3 max-w-700 mx-auto">
+        <h3 class="fw-bold mb-3">Not Sure Which Service Matches Your Need?</h3>
+        <p class="lead text-light-opacity mb-4 fs-6">
+            Share your project brief or codebase details with us. Our senior architects will provide a clear, no-obligation technical assessment.
+        </p>
+        <a asp-controller="Contact" asp-action="Index" class="btn btn-primary btn-lg px-4 py-3 fw-bold">
+            <i class="bi bi-envelope-fill me-1"></i> Contact Our Engineering Team
+        </a>
+    </div>
+</section>

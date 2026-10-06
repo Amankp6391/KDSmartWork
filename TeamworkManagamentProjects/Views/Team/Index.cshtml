@@ -1,0 +1,168 @@
+@model TeamworkManagamentProjects.ViewModels.TeamPageViewModel
+@{
+    ViewData["Title"] = "Our Development Team | 5 Experienced .NET Developers";
+    ViewData["MetaDescription"] = "Meet our 5-member remote software engineering team with 4–8 years of professional experience across ASP.NET Core, MVC, Web Forms, C#, and SQL Server.";
+}
+
+<!-- Page Header -->
+<section class="page-header py-5 text-white bg-dark-navy position-relative">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary text-white text-uppercase px-3 py-2 fw-semibold mb-2">Our Engineering Roster</span>
+                <h1 class="display-5 fw-bold mb-2">5-Member Dedicated .NET Team</h1>
+                <p class="lead text-light-opacity mb-0 fs-6">
+                    A synchronized remote development team with 4–8 years of professional experience, ready for full-time, part-time, or project engagements.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a asp-controller="Hire" asp-action="Index" class="btn btn-primary fw-semibold px-4 py-2">
+                    <i class="bi bi-person-plus-fill me-1"></i> Hire Full Team
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Roster -->
+<section class="py-5">
+    <div class="container">
+        <!-- Team summary banner -->
+        <div class="p-4 rounded-4 bg-light border mb-5 shadow-xs">
+            <div class="row align-items-center g-3 text-center text-md-start">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                        <i class="bi bi-people-fill text-primary fs-2"></i>
+                        <div>
+                            <h5 class="fw-bold mb-0">5 Developers</h5>
+                            <span class="text-muted text-xs">Led by Aman Kumar Pandey</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                        <i class="bi bi-briefcase-fill text-success fs-2"></i>
+                        <div>
+                            <h5 class="fw-bold mb-0">4–8 Years</h5>
+                            <span class="text-muted text-xs">Professional Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                        <i class="bi bi-laptop-fill text-info fs-2"></i>
+                        <div>
+                            <h5 class="fw-bold mb-0">100% Remote</h5>
+                            <span class="text-muted text-xs">KDSmartWork Engineering</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-md-end">
+                    <a asp-controller="Hire" asp-action="Index" class="btn btn-primary btn-sm fw-bold px-3 py-2">
+                        Hire Individual Developer
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Structure Hierarchy Flow -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-4 bg-white mb-5 border">
+            <h5 class="fw-bold text-dark text-center mb-4"><i class="bi bi-diagram-2-fill text-primary me-2"></i> Team Organizational Structure & Leadership</h5>
+
+            <div class="row g-3 justify-content-center text-center">
+                <div class="col-md-4">
+                    <div class="p-3 bg-primary-subtle rounded-3 border border-primary-subtle h-100 d-flex flex-column align-items-center">
+                        <img src="/image/1761761014538.jfif" alt="Aman Kumar Pandey" class="rounded-circle object-fit-cover border border-primary border-2 shadow-xs mb-2" style="width: 64px; height: 64px;" />
+                        <span class="badge bg-primary text-white text-xs mb-2">Leadership & Strategy</span>
+                        <h6 class="fw-bold text-dark mb-1">Aman Kumar Pandey</h6>
+                        <p class="text-primary small fw-semibold mb-0">Founder & CEO | Principal .NET Architect</p>
+                        <span class="text-muted text-xs">Business Strategy & System Design</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-info-subtle rounded-3 border border-info-subtle h-100 d-flex flex-column align-items-center">
+                        <div class="rounded-circle bg-dark text-white d-flex align-items-center justify-content-center fw-bold shadow-xs mb-2" style="width: 64px; height: 64px; font-size: 1.25rem;">
+                            Y
+                        </div>
+                        <span class="badge bg-dark text-white text-xs mb-2">Technical Execution</span>
+                        <h6 class="fw-bold text-dark mb-1">Yashwant</h6>
+                        <p class="text-dark small fw-semibold mb-0">CTO & Technical Lead</p>
+                        <span class="text-muted text-xs">Architecture, Code Reviews & Cloud</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-light rounded-3 border h-100 d-flex flex-column align-items-center">
+                        <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-bold shadow-xs mb-2" style="width: 64px; height: 64px; font-size: 1.25rem;">
+                            KD
+                        </div>
+                        <span class="badge bg-secondary text-white text-xs mb-2">Full-Stack & Delivery</span>
+                        <h6 class="fw-bold text-dark mb-1">Kashish Dwivedi</h6>
+                        <p class="text-secondary small fw-semibold mb-0">Senior Full-Stack Developer & Operations</p>
+                        <span class="text-muted text-xs">Web Apps, Frontend & QA Coordination</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer Cards Grid -->
+        <div class="row g-4">
+            @foreach (var dev in Model.Developers)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <partial name="_DeveloperCard" model="dev" />
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Team Work Methodology -->
+<section class="py-5 bg-light border-top">
+    <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-primary-subtle text-primary text-uppercase px-3 py-2 fw-bold tracking-wide">Collaboration Framework</span>
+            <h2 class="display-6 fw-bold mt-2 text-dark">How Our Team Integrates With Yours</h2>
+            <p class="text-secondary lead fs-6">
+                We fit seamlessly into your existing development tools, communication channels, and workflows.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="feature-icon bg-primary-subtle text-primary rounded-3 p-3 fs-4 mb-3 d-inline-block">
+                        <i class="bi bi-git"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Source Control & CI/CD</h5>
+                    <p class="text-secondary small mb-0">
+                        We work directly inside your GitHub, GitLab, Azure DevOps, or Bitbucket repositories with clean branch management, feature branches, and pull requests.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="feature-icon bg-success-subtle text-success rounded-3 p-3 fs-4 mb-3 d-inline-block">
+                        <i class="bi bi-kanban"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Agile & Sprint Tracking</h5>
+                    <p class="text-secondary small mb-0">
+                        We participate in your Jira, Trello, ClickUp, or Azure Boards backlog, updating ticket states, logging progress, and breaking down user stories.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 p-4 rounded-4 shadow-sm bg-white">
+                    <div class="feature-icon bg-info-subtle text-info rounded-3 p-3 fs-4 mb-3 d-inline-block">
+                        <i class="bi bi-camera-video"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Live Communication</h5>
+                    <p class="text-secondary small mb-0">
+                        Daily standups, asynchronous progress updates, and pair programming via Microsoft Teams, Slack, Zoom, or Google Meet with timezone coordination.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,208 @@
+@model TeamworkManagamentProjects.ViewModels.ContactEnquiryViewModel
+@{
+    ViewData["Title"] = "Contact Us | Discuss Your .NET Project";
+    ViewData["MetaDescription"] = "Get in touch with our 5-member remote .NET development team. Discuss new web applications, legacy maintenance, new modules, and developer hiring.";
+}
+
+<!-- Page Header -->
+<section class="page-header py-5 text-white bg-dark-navy position-relative">
+    <div class="container py-3">
+        <span class="badge bg-primary text-white text-uppercase px-3 py-2 fw-semibold mb-2">Get In Touch</span>
+        <h1 class="display-5 fw-bold mb-2">Contact Our .NET Engineering Team</h1>
+        <p class="lead text-light-opacity mb-0 fs-6">
+            Share your project requirement or development needs. An experienced developer will get back to you within 24 hours.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Form & Info Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Left Info Panel -->
+            <div class="col-lg-4">
+                <div class="p-4 p-lg-5 rounded-4 bg-light border h-100 d-flex flex-column">
+                    <h4 class="fw-bold text-dark mb-4">Direct Contact Information</h4>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="contact-icon-box bg-white text-primary rounded-3 p-3 shadow-xs fs-4">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-muted fw-bold text-uppercase">Email Us</span>
+                            <h6 class="fw-bold mb-0 text-dark">contact@kdsmartwork.com</h6>
+                            <span class="text-muted text-xs">Response within 24 hours</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="contact-icon-box bg-white text-primary rounded-3 p-3 shadow-xs fs-4">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-muted fw-bold text-uppercase">Call / WhatsApp</span>
+                            <h6 class="fw-bold mb-0 text-dark">+1 (800) 555-0199</h6>
+                            <span class="text-muted text-xs">Mon–Fri: 8:00 AM – 6:00 PM (EST)</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="contact-icon-box bg-white text-primary rounded-3 p-3 shadow-xs fs-4">
+                            <i class="bi bi-globe-americas"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-muted fw-bold text-uppercase">Work Setup</span>
+                            <h6 class="fw-bold mb-0 text-dark">100% Remote Development Team</h6>
+                            <span class="text-muted text-xs">Serving clients in US, UK, EU & Global</span>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-white rounded-3 border mt-auto">
+                        <h6 class="fw-bold text-dark text-xs text-uppercase mb-2"><i class="bi bi-shield-lock-fill text-success me-1"></i> NDA Protected</h6>
+                        <p class="text-secondary text-xs mb-0">
+                            We treat all client requests with confidentiality. We are happy to execute an NDA before you share source code or specifications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Contact Form -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                    <div class="card-header bg-primary text-white p-4">
+                        <h4 class="fw-bold mb-1">Project & Engagement Enquiry</h4>
+                        <p class="text-white-opacity small mb-0">Please provide as much context as possible for an accurate technical review.</p>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5 bg-white">
+                        <form asp-controller="Contact" asp-action="Index" method="post" id="contactForm" novalidate>
+                            @Html.AntiForgeryToken()
+
+                            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                            <div class="row g-4 mb-4">
+                                <!-- Full Name -->
+                                <div class="col-md-6">
+                                    <label asp-for="Name" class="form-label fw-semibold text-dark">Full Name <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
+                                        <input asp-for="Name" class="form-control" placeholder="e.g. Michael Smith" />
+                                    </div>
+                                    <span asp-validation-for="Name" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Company Name -->
+                                <div class="col-md-6">
+                                    <label asp-for="CompanyName" class="form-label fw-semibold text-dark">Company Name (Optional)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-building"></i></span>
+                                        <input asp-for="CompanyName" class="form-control" placeholder="e.g. Apex Corp" />
+                                    </div>
+                                    <span asp-validation-for="CompanyName" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-md-6">
+                                    <label asp-for="Email" class="form-label fw-semibold text-dark">Work Email Address <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+                                        <input asp-for="Email" type="email" class="form-control" placeholder="name@company.com" />
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-md-6">
+                                    <label asp-for="Phone" class="form-label fw-semibold text-dark">Phone / WhatsApp <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="bi bi-telephone"></i></span>
+                                        <input asp-for="Phone" class="form-control" placeholder="+1 (555) 000-0000" />
+                                    </div>
+                                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Service Required Dropdown -->
+                                <div class="col-md-6">
+                                    <label asp-for="ServiceRequired" class="form-label fw-semibold text-dark">Service Required <span class="text-danger">*</span></label>
+                                    <select asp-for="ServiceRequired" class="form-select">
+                                        <option value="">-- Select Required Service --</option>
+                                        <option value="New Project">New Project Development</option>
+                                        <option value="Existing Project Maintenance">Existing Project Maintenance</option>
+                                        <option value="New Module">New Module / Feature Addition</option>
+                                        <option value="Bug Fixing">Bug Fixing & Diagnostics</option>
+                                        <option value="ASP.NET Core">ASP.NET Core Development</option>
+                                        <option value="ASP.NET MVC">ASP.NET MVC Development</option>
+                                        <option value="ASP.NET Web Forms">ASP.NET Web Forms Support & Maintenance</option>
+                                        <option value="Angular & .NET Full-Stack">Angular + ASP.NET Core Full-Stack</option>
+                                        <option value="React & .NET Full-Stack">React + ASP.NET Core Full-Stack</option>
+                                        <option value="API Development">API Development & Integration</option>
+                                        <option value="SQL Server">SQL Server Development & Tuning</option>
+                                        <option value="Hire Developer">Hire Remote Developer</option>
+                                        <option value="Other">Other Custom Requirement</option>
+                                    </select>
+                                    <span asp-validation-for="ServiceRequired" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Engagement Type Dropdown -->
+                                <div class="col-md-6">
+                                    <label asp-for="EngagementType" class="form-label fw-semibold text-dark">Engagement Type <span class="text-danger">*</span></label>
+                                    <select asp-for="EngagementType" class="form-select">
+                                        <option value="">-- Select Engagement Model --</option>
+                                        <option value="Full-Time">Full-Time (40 Hours/Week)</option>
+                                        <option value="Part-Time">Part-Time (20 Hours/Week)</option>
+                                        <option value="Project-Based">Project-Based (Fixed Scope)</option>
+                                        <option value="Long-Term Maintenance">Long-Term Maintenance Retainer</option>
+                                    </select>
+                                    <span asp-validation-for="EngagementType" class="text-danger small"></span>
+                                </div>
+
+                                <!-- Preferred Contact Method -->
+                                <div class="col-12">
+                                    <label asp-for="PreferredContactMethod" class="form-label fw-semibold text-dark">Preferred Contact Method</label>
+                                    <div class="d-flex flex-wrap gap-4 pt-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" asp-for="PreferredContactMethod" value="Email" id="methodEmail" checked>
+                                            <label class="form-check-label" for="methodEmail">Email</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" asp-for="PreferredContactMethod" value="Phone" id="methodPhone">
+                                            <label class="form-check-label" for="methodPhone">Phone</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" asp-for="PreferredContactMethod" value="WhatsApp" id="methodWhatsApp">
+                                            <label class="form-check-label" for="methodWhatsApp">WhatsApp</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" asp-for="PreferredContactMethod" value="VideoCall" id="methodVideo">
+                                            <label class="form-check-label" for="methodVideo">Video Call (Teams/Zoom/Meet)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project Description -->
+                                <div class="col-12">
+                                    <label asp-for="ProjectDescription" class="form-label fw-semibold text-dark">Project Description & Requirements <span class="text-danger">*</span></label>
+                                    <textarea asp-for="ProjectDescription" rows="5" class="form-control" placeholder="Please provide details about your project, technology stack, target timeline, or specific challenges..."></textarea>
+                                    <span asp-validation-for="ProjectDescription" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-wrap align-items-center justify-content-between pt-3 border-top">
+                                <span class="text-xs text-muted mb-2 mb-md-0">
+                                    <i class="bi bi-lock-fill text-success me-1"></i> Data is encrypted and will never be shared.
+                                </span>
+                                <button type="submit" class="btn btn-primary btn-lg px-4 py-3 fw-bold shadow-sm">
+                                    <i class="bi bi-send-fill me-1"></i> Submit Enquiry
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

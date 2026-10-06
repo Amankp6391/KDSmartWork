@@ -1,0 +1,148 @@
+@model List<TeamworkManagamentProjects.Models.DeveloperProfile>
+@{
+    ViewData["Title"] = "About Us | Remote .NET Software Development Team";
+    ViewData["MetaDescription"] = "Learn about our remote software development team with 5 experienced .NET developers (4–8 years experience) specializing in ASP.NET Core, MVC, Web Forms, and SQL Server.";
+}
+
+<!-- Page Header -->
+<section class="page-header py-5 text-white bg-dark-navy position-relative">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary text-white text-uppercase px-3 py-2 fw-semibold mb-2">About Our Team</span>
+                <h1 class="display-5 fw-bold mb-2">Dedicated Remote .NET Software Development</h1>
+                <p class="lead text-light-opacity mb-0 fs-6">
+                    A cohesive team of 5 experienced developers with 4–8 years of professional experience building, maintaining, and scaling enterprise web applications.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a asp-controller="Hire" asp-action="Index" class="btn btn-primary fw-semibold px-4 py-2">
+                    <i class="bi bi-person-plus-fill me-1"></i> Hire Developers
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main About Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="fw-bold display-6 text-dark mb-3">Who We Are</h2>
+                <p class="text-secondary lead fs-6">
+                    <strong>KDSmartWork</strong> is a dedicated remote software development team founded by <strong>Aman Kumar Pandey</strong>, comprising <strong>5 experienced .NET developers</strong> with between <strong>4 to 8 years of professional experience</strong>.
+                </p>
+                <p class="text-secondary">
+                    Led by <strong>Aman Kumar Pandey</strong> (Founder & CEO | Principal Architect), <strong>Yashwant</strong> (CTO & Technical Lead), and <strong>Kashish Dwivedi</strong> (Senior Full-Stack Developer & Operations), our team was built to provide reliable, scalable, and cost-effective development capabilities to software houses, companies, startups, and organizations worldwide.
+                </p>
+                <p class="text-secondary">
+                    We believe in honest communication, clean code architecture, realistic estimates, and transparent delivery milestones. We do not make unrealistic promises or hype—we focus on disciplined software craftsmanship and dependable collaboration.
+                </p>
+
+                <div class="row g-3 mt-2">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2 p-3 bg-light rounded-3 border">
+                            <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Full-Time Availability</h6>
+                                <span class="text-muted text-xs">Dedicated 40h/week engineers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2 p-3 bg-light rounded-3 border">
+                            <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Part-Time Support</h6>
+                                <span class="text-muted text-xs">Flexible 10–20h/week support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2 p-3 bg-light rounded-3 border">
+                            <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Project-Based Work</h6>
+                                <span class="text-muted text-xs">Clear milestone deliverables</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2 p-3 bg-light rounded-3 border">
+                            <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Long-Term Maintenance</h6>
+                                <span class="text-muted text-xs">Ongoing patches & support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg rounded-4 p-4 p-lg-5 bg-gradient-navy text-white">
+                    <h4 class="fw-bold mb-4 text-white"><i class="bi bi-gem text-accent me-2"></i> Core Principles & Work Culture</h4>
+                    
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="fs-4 text-accent"><i class="bi bi-code-slash"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1 text-white">Clean Code & Architecture</h6>
+                            <p class="text-light-subtle small mb-0">We write structured, readable C# following SOLID principles, separation of concerns, and clean architectural boundaries so any developer can maintain it.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="fs-4 text-accent"><i class="bi bi-chat-left-dots"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1 text-white">Direct & Open Communication</h6>
+                            <p class="text-light-subtle small mb-0">You communicate directly with the developers writing your code. No convoluted account manager bureaucracy or delay.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="fs-4 text-accent"><i class="bi bi-shield-check"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1 text-white">Respect for Legacy Systems</h6>
+                            <p class="text-light-subtle small mb-0">We understand the real-world value of legacy ASP.NET Web Forms and older MVC apps. We maintain and enhance them safely without breaking production.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <div class="fs-4 text-accent"><i class="bi bi-speedometer"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1 text-white">Performance & Quality First</h6>
+                            <p class="text-light-subtle small mb-0">Optimized database indexing, async I/O, lightweight Razor rendering, and thorough manual & automated testing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Preview on About Page -->
+        <div class="pt-5 border-top">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="badge bg-primary-subtle text-primary text-uppercase px-3 py-2 fw-bold tracking-wide">The Engineering Team</span>
+                <h3 class="display-6 fw-bold mt-2">Meet Our 5 Developers</h3>
+                <p class="text-secondary lead fs-6">
+                    Each team member brings specialized strength across the Microsoft development ecosystem.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                @foreach (var dev in Model)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <partial name="_DeveloperCard" model="dev" />
+                    </div>
+                }
+            </div>
+
+            <div class="text-center mt-5">
+                <a asp-controller="Team" asp-action="Index" class="btn btn-outline-primary btn-lg fw-semibold px-4">
+                    View Full Team Structure <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
